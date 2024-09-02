@@ -1,0 +1,32 @@
+.table-container {
+    overflow-x: auto;
+    padding: 16px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--ion-color-light);
+  }
+  
+  th, td {
+    border: 1px solid var(--ion-color-medium);
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--ion-color-light-shade);
+  }
+  
+  @media (max-width: 768px) {
+    th, td {
+      padding: 8px;
+      font-size: 0.9em;
+    }
+  }

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Marker Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Marker Name</th>
+          <th *ngFor="let group of groups" colspan="3">{{ group }}</th>
+          <th rowspan="2">Average</th>
+        </tr>
+        <tr>
+          <ng-container *ngFor="let group of groups">
+            <th>Mark 1</th>
+            <th>Mark 2</th>
+            <th>Mark 3</th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let marker of markers; let i = index">
+          <td>{{ marker }}</td>
+          <ng-container *ngFor="let groupMark of marks[i]">
+            <td *ngFor="let mark of groupMark.marks">{{ mark }}</td>
+          </ng-container>
+          <td>{{ calculateAverage(marks[i]) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
